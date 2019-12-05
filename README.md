@@ -163,8 +163,12 @@ printf 'CREATE TABLE gaps (gapsize INTEGER,ismax BOOLEAN,primecat TEXT,isfirst T
 
 # Initialise new git repository
 git init .
+# Add README.md
+git add README.md
+# Commit the README
+THE_TIME='2016-03-05T00:00:00 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'initial commit' README.md
 # Commit each dated retrieval as allgaps.sql, using the retrieval date as the commit date.
-cp -f allgaps-20160305015919.sql allgaps.sql; git add allgaps.sql; THE_TIME='2016-03-05T01:59:19 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'initial commit 2016-03-05' allgaps.sql
+cp -f allgaps-20160305015919.sql allgaps.sql; git add allgaps.sql; THE_TIME='2016-03-05T01:59:19 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'update 2016-03-05' allgaps.sql
 cp -f allgaps-20160308084512.sql allgaps.sql; THE_TIME='2016-03-08T08:45:12 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'update 2016-03-08' allgaps.sql
 cp -f allgaps-20160404153825.sql allgaps.sql; THE_TIME='2016-04-04T15:38:25 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'update 2016-04-04' allgaps.sql
 cp -f allgaps-20160622011044.sql allgaps.sql; THE_TIME='2016-06-22T01:10:44 -0000' GIT_AUTHOR_DATE=${THE_TIME} GIT_COMMITTER_DATE=${THE_TIME} git commit -m 'update 2016-06-22' allgaps.sql
